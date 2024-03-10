@@ -3,10 +3,7 @@ using namespace std;
 
 class sample {
 public:
-    // Define a pointer to a member function
     int (sample::*Compute)(int);
-
-    // Constructor to initialize the pointer
     sample() {
         Compute = &sample::findFactorial; 
     }
@@ -30,8 +27,6 @@ public:
 
 int main(int argc, char* argv[]) {
     sample obj;
-
-    // Call Compute method and pass the findFactorial function as an argument
     int result = (obj.*obj.Compute)(5);
     cout << "Factorial of 5: " << result << endl;
 
